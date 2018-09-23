@@ -1,0 +1,10 @@
+
+.calendar-month {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+  }
+  
+  .calendar-month--scrolling {
+      opacity: 0.5;
+  }

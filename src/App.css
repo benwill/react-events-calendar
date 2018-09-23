@@ -1,0 +1,11 @@
+.app {
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+}
+.app--scrolling {
+  position: fixed;
+  top: calc(50% - 50px);
+  left: 50%;
+  height: 100px;
+  line-height: 100px;
+}

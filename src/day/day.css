@@ -1,0 +1,53 @@
+/* Normal Day */
+.day {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.day__inner {
+  flex: 1;
+  height: 100%;
+  background: #fff;
+  padding: 10px;
+}
+.day__inner__number {
+  font-size: 1.5em;
+  line-height: 60px;
+  height: 60px;
+}
+.day__inner__month {
+  height: 20px;
+  line-height: 20px;
+  font-size: 0.8em;
+  font-style: italic;
+}
+/* Alt day */
+.day--alt {
+  background: #f3f3f3;
+}
+.day__inner--alt {
+  background: #f3f3f3;
+}
+/* Border Radiuses */
+.day__inner--first {
+  border-top-left-radius: 9px;
+}
+.day__inner--last {
+  border-bottom-right-radius: 9px;
+}
+/* Changeover */
+.day--changeover-first {
+  background: #fff;
+}
+.day--changeover-first > .day__inner {
+  background: #fff;
+  border-bottom-left-radius: 9px;
+}
+/* Changeover alt */
+.day--changeover-first.day--alt {
+  background: #f3f3f3;
+}
+.day--changeover-first > .day__inner--alt {
+  background: #f3f3f3;
+}
