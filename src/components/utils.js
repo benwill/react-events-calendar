@@ -14,17 +14,18 @@ const addMonths = (date, months) => {
 }
 
 const getFirstDayOfCalendarMonth = date => {
-  const dayNumber = date.getDay();
+  var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+  const dayNumber = firstDay.getDay();
 
   // If Monday, return
-  if (dayNumber === 1) return date;
+  if (dayNumber === 1) return firstDay;
 
   // If Sunday - 6
-  if (dayNumber === 0) return addDays(date, -6);
+  if (dayNumber === 0) return addDays(firstDay, -6);
 
   // Otherwise day number -1
   // e.g. weds (day 3) needs to take away 2 days to get to mon (3 - 1 = 2)
-  return addDays(date, -(dayNumber - 1));
+  return addDays(firstDay, -(dayNumber - 1));
 };
 
 const getWeeksInMonth = date => {
