@@ -37,9 +37,25 @@ class ReactEventsCalendar extends Component {
     return mondays.length * ROW_HEIGHT;
   }
 
+  renderDaysOfWeek() {
+    return (
+      <ul>
+        <li />
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
+        <li>Sun</li>
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div className="app">
+        <div className="app--days">{this.renderDaysOfWeek()}</div>
         <AutoSizer>
           {({ width, height }) => (
             <List

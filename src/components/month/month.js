@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import classNames from "classnames";
 import "./month.css";
 import Week from "../week";
+import { getMonthName } from "../utils";
 
 class Month extends Component {
   render() {
-    const { isScrolling, weeks, onSelectDate } = this.props;
+    const { isScrolling, weeks, month, onSelectDate } = this.props;
     const css = classNames(
       {
         "calendar-month--scrolling": isScrolling
@@ -13,8 +14,15 @@ class Month extends Component {
       "calendar-month"
     );
 
+    const isScrollingContent = isScrolling ? (
+      <span className="calendar-month--scroll-content">{`${getMonthName(
+        month
+      )} ${month.getFullYear()}`}</span>
+    ) : null;
+
     return (
       <div className={css}>
+        {isScrollingContent}
         {weeks.map((w, i) => (
           <Week
             key={w.date}
