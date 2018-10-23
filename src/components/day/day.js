@@ -3,12 +3,12 @@ import classNames from "classnames";
 import "./day.css";
 
 class Day extends Component {
-  onSelect(e) {
+  
+  onSelect() {
     const { onSelectDate, d } = this.props;
-
-    console.log("selected");
     onSelectDate(d);
   }
+
   render() {
     const {
       isEven,

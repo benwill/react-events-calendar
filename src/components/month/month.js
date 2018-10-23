@@ -12,11 +12,17 @@ class Month extends Component {
       },
       "calendar-month"
     );
-    
+
     return (
       <div className={css}>
         {weeks.map((w, i) => (
-          <Week key={w.date} index={w.date} onSelectDate={onSelectDate} weekNumber={i} startOfWeek={w} />
+          <Week
+            key={w.date}
+            index={w.date}
+            onSelectDate={onSelectDate}
+            weekNumber={i}
+            startOfWeek={w}
+          />
         ))}
       </div>
     );

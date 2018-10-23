@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "proptypes";
 import { List, AutoSizer } from "react-virtualized";
 
 import { addMonths, getWeeksInMonth } from "./utils";
@@ -7,10 +8,10 @@ import "./App.css";
 
 const ROW_HEIGHT = 100;
 
-const startDate = new Date(2018, 8, 1, 1, 1, 1);
-
 class ReactEventsCalendar extends Component {
   getMonthFromIndex(index) {
+    const { startDate } = this.props;
+
     return addMonths(startDate, 1 * index);
   }
 
@@ -56,5 +57,9 @@ class ReactEventsCalendar extends Component {
     );
   }
 }
+
+ReactEventsCalendar.propTypes = {
+  startDate: PropTypes.instanceOf(Date).isRequired
+};
 
 export default ReactEventsCalendar;
