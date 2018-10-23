@@ -1,18 +1,26 @@
 {
-  "name": "flock",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-events-calendar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:benwill/react-events-calendar.git",
+  "author": "Ben Williams <benwill1984@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-actions": "^4.0.0-rc.3",
+    "@storybook/addon-links": "^4.0.0-rc.3",
+    "@storybook/addons": "^4.0.0-rc.3",
+    "@storybook/react": "^4.0.0-rc.3",
+    "babel-loader": "^8.0.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
-    "react-virtualized": "^9.20.1"
+    "react-virtualized": "^9.21.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }

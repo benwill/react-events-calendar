@@ -37,7 +37,7 @@ class Week extends Component {
   }
 
   render() {
-    const { startOfWeek, weekNumber } = this.props;
+    const { startOfWeek, weekNumber, onSelectDate } = this.props;
     const { date, isChangeOver } = startOfWeek;
     const isEven = startOfWeek.date.getMonth() % 2;
     const days = getWeekDays(date);
@@ -51,7 +51,8 @@ class Week extends Component {
             <Day
               key={d}
               date={d.getDate()}
-              month={getMonthName(d)}
+              d={d}
+              onSelectDate={onSelectDate}
               changeoverFirstDay={isChangeOver && i === 0}
               isEven={d.getMonth() % 2 === 0}
               isFirst={isChangeOver && d.getDate() === 1}

@@ -3,8 +3,21 @@ import classNames from "classnames";
 import "./day.css";
 
 class Day extends Component {
+  onSelect(e) {
+    const { onSelectDate, d } = this.props;
+
+    console.log("selected");
+    onSelectDate(d);
+  }
   render() {
-    const { isEven, isFirst, isLast, changeoverFirstDay } = this.props;
+    const {
+      isEven,
+      isFirst,
+      isLast,
+      changeoverFirstDay,
+      date,
+      month
+    } = this.props;
 
     const outerCss = classNames("day", {
       "day--alt": isEven,
@@ -14,14 +27,14 @@ class Day extends Component {
     const innerCss = classNames("day__inner", {
       "day__inner--alt": !isEven,
       "day__inner--first": isFirst,
-      "day__inner--last": isLast,
+      "day__inner--last": isLast
     });
 
     return (
       <div className={outerCss}>
-        <div className={innerCss}>
-          <div className="day__inner__number">{this.props.date}</div>
-          <div className="day__inner__month">{this.props.month}</div>
+        <div className={innerCss} onClick={this.onSelect.bind(this)}>
+          <div className="day__inner__number">{date}</div>
+          <div className="day__inner__month">{month}</div>
         </div>
       </div>
     );

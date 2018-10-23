@@ -9,17 +9,23 @@ const ROW_HEIGHT = 100;
 
 const startDate = new Date(2018, 8, 1, 1, 1, 1);
 
-class App extends Component {
+class ReactEventsCalendar extends Component {
   getMonthFromIndex(index) {
     return addMonths(startDate, 1 * index);
   }
 
   rowRenderer({ index, isScrolling, key, style }) {
+    const { onSelectDate } = this.props;
     const month = this.getMonthFromIndex(index);
     const weeks = getWeeksInMonth(month);
     return (
       <div key={key} style={style} className="calendar-page">
-        <Month month={month} weeks={weeks} isScrolling={isScrolling} />
+        <Month
+          month={month}
+          weeks={weeks}
+          isScrolling={isScrolling}
+          onSelectDate={onSelectDate}
+        />
       </div>
     );
   }
@@ -51,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ReactEventsCalendar;

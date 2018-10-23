@@ -5,7 +5,7 @@ import Week from "../week";
 
 class Month extends Component {
   render() {
-    const { isScrolling, weeks } = this.props;
+    const { isScrolling, weeks, onSelectDate } = this.props;
     const css = classNames(
       {
         "calendar-month--scrolling": isScrolling
@@ -16,7 +16,7 @@ class Month extends Component {
     return (
       <div className={css}>
         {weeks.map((w, i) => (
-          <Week index={w.date} weekNumber={i} startOfWeek={w} />
+          <Week key={w.date} index={w.date} onSelectDate={onSelectDate} weekNumber={i} startOfWeek={w} />
         ))}
       </div>
     );
